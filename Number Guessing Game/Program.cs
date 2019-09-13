@@ -18,22 +18,24 @@ namespace Number_Guessing_Game
             int guessChoice = 0;
             bool guessing = true;
 
-
-            Console.WriteLine("Welcome to Random Number Guessing Game");
-            Console.WriteLine("Please set the low value of the range.");
-            lowChoice = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Please set the high value of the range.");
-            highChoice = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(" ");
-
+            while (lowChoice >= highChoice)
+            {
+                Console.WriteLine("Welcome to Random Number Guessing Game");
+                Console.WriteLine("Please set the low value of the range.");
+                lowChoice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Please set the high value of the range.");
+                highChoice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(" ");
+            }
 
             {
                 if (highChoice >= lowChoice)
                 {
-                    Console.WriteLine("Pick the Number within the range " + lowChoice + " - " + highChoice + " for the computer to guess.");
-                    guessChoice = Convert.ToInt32(Console.ReadLine());
-                    while (guessChoice > highChoice || guessChoice < lowChoice)
+                    while (guessChoice > highChoice || guessChoice < lowChoice)                 // Make sures your range isn't incorrect
                     {
+                        Console.WriteLine("Pick the Number within the range " + lowChoice + " - " + highChoice + " for the computer to guess.");
+                    guessChoice = Convert.ToInt32(Console.ReadLine());
+               
                         Console.WriteLine("That was outside the boundries try again.");
                         guessChoice = Convert.ToInt32(Console.ReadLine());
                     }
@@ -42,7 +44,7 @@ namespace Number_Guessing_Game
                 
             }
 
-            while (guessing == true)
+            while (guessing == true)                                                            // While in this loop run until you get the correct number when computer is using random values between range
             {
                 guessNumber = random.Next(lowChoice, (highChoice + 1));
                 if (guessNumber == guessChoice)
