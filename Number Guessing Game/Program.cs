@@ -57,7 +57,6 @@ namespace Number_Guessing_Game
                 {
                     guessing = false;
                     Console.WriteLine("Computer has noticed that you are cheating, so it automatically won.");
-                    Console.WriteLine("Filthy Cheater...");
                 }
 
             }
@@ -85,13 +84,13 @@ namespace Number_Guessing_Game
                 }
                 else if (input == "H" || input == "h")
                 {
-                    highChoice = (guessNumber + 1);
+                    lowChoice = (guessNumber + 1);
                     guessing = true;
                     counter++;
                 }
                 else if (input == "L" || input == "l")
                 {
-                    lowChoice = (guessNumber - 1);
+                    highChoice = (guessNumber - 1);
                     guessing = true;
                     counter++;
                 }
