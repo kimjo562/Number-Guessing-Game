@@ -34,10 +34,13 @@ namespace Number_Guessing_Game
                     while (guessChoice > highChoice || guessChoice < lowChoice)                 // Make sures your range isn't incorrect
                     {
                         Console.WriteLine("Pick the Number within the range " + lowChoice + " - " + highChoice + " for the computer to guess.");
-                    guessChoice = Convert.ToInt32(Console.ReadLine());
-               
-                        Console.WriteLine("That was outside the boundries try again.");
                         guessChoice = Convert.ToInt32(Console.ReadLine());
+
+                        if (guessChoice > highChoice || guessChoice < lowChoice)
+                        {
+                            Console.WriteLine("That was outside the boundries try again.");
+                        }
+
                     }
 
                 }
